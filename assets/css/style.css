@@ -56,11 +56,6 @@ body {
     height: 50px;
   }
 }
-@media screen and (max-width: 900px) {
-  #navbar .nav-brand .brand-avatar {
-    display: none;
-  }
-}
 #navbar .nav-brand .nav-name {
   display: none;
 }
@@ -100,6 +95,24 @@ body {
   max-height: 200px;
   border: 8px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
+}
+@media screen and (max-width: 900px) {
+  #navbar .avatar {
+    display: none;
+  }
+}
+#navbar .logo {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  #navbar .logo {
+    display: block;
+    max-width: 50px;
+    max-height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    margin-right: 10px;
+  }
 }
 #navbar .nav-collapse {
   display: flex;

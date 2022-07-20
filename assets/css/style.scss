@@ -55,12 +55,6 @@ body {
       height: 50px;
     }
 
-    .brand-avatar {
-      @include maxWidth(900px) {
-        display: none;
-      }
-    }
-
     .nav-name {
       display: none;
 
@@ -103,6 +97,22 @@ body {
     max-height: 200px;
     border: 8px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
+
+    @include maxWidth(900px) {
+      display: none;
+    }
+  }
+
+  .logo {
+    display: none;
+    @include maxWidth(900px) {
+      display: block;
+      max-width: 50px;
+      max-height: 50px;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      margin-right: 10px;
+    }
   }
 
   .nav-collapse {
