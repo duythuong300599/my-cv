@@ -1,0 +1,514 @@
+@import "./variables.scss";
+* {
+  box-sizing: border-box;
+}
+
+html {
+  display: block;
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+#top {
+  padding-left: 300px;
+  @include maxWidth(900px) {
+    padding: 0;
+  }
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  text-align: center;
+  width: 300px;
+  height: 100vh;
+  padding: 10px 15px;
+  background: $bg-primary;
+
+  @include maxWidth(900px) {
+    right: 0;
+    height: 70px;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    display: flex;
+    margin: auto auto 0;
+    padding: 8px;
+
+    @include maxWidth(900px) {
+      margin: 0;
+      align-items: center;
+      height: 50px;
+    }
+
+    .brand-avatar {
+      @include maxWidth(900px) {
+        display: none;
+      }
+    }
+
+    .nav-name {
+      display: none;
+
+      @include maxWidth(900px) {
+        display: block;
+        font-size: 28px;
+        color: #fdfdfd;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .nav-btn-toggle {
+    display: none;
+    background-color: transparent;
+    border: 1px solid $text-collapsed;
+    border-radius: 5px;
+
+    @include maxWidth(900px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 60px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    i {
+      font-size: 32px;
+      color: $text-collapsed;
+      padding: 0 10px;
+    }
+  }
+
+  .avatar {
+    max-width: 200px;
+    max-height: 200px;
+    border: 8px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+  }
+
+  .nav-collapse {
+    display: flex;
+    margin: 0 0 auto;
+    justify-content: center;
+
+    @include maxWidth(900px) {
+      display: none;
+    }
+
+    .nav-list {
+      width: 100%;
+      padding: 10px 0 0;
+      margin: 0;
+      list-style: none;
+      text-transform: uppercase;
+      color: $text-collapsed;
+
+      &-item {
+        display: flex;
+
+        @include maxWidth(900px) {
+          border-top: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        &:hover {
+          .nav-link {
+            color: $text-collapsed-hover;
+          }
+        }
+
+        .nav-link {
+          display: block;
+          text-decoration: none;
+          width: 100%;
+          font-size: 20px;
+          padding: 15px 10px;
+          font-weight: 800;
+          color: $text-collapsed;
+        }
+      }
+    }
+  }
+}
+
+#main {
+  width: 100%;
+
+  .section-info {
+    display: flex;
+    padding: 50px 40px;
+    min-height: 100vh;
+
+    @include maxWidth(700px) {
+      padding: 70px 10px 0;
+    }
+
+    .my-info {
+      width: 100%;
+      margin: auto 0;
+      color: $text-primary;
+      h1 {
+        font-size: 92px;
+        margin: 0;
+        line-height: 1.2;
+        letter-spacing: -3px;
+        span {
+          color: $text-color;
+
+          &:hover {
+            color: $text-hover;
+          }
+        }
+      }
+
+      h2 {
+        font-size: 60px;
+        line-height: 1.4;
+        margin: 0 0 20px 0;
+        text-transform: uppercase;
+      }
+
+      .info {
+        &-dev {
+          font-size: 24px;
+          line-height: 1.4;
+          font-weight: 800;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+        }
+
+        &-contact {
+          font-size: 20px;
+          line-height: 1.4;
+          font-weight: 700;
+          margin-top: 20px;
+
+          a:hover {
+            color: $text-hover;
+          }
+        }
+
+        &-detail {
+          margin-left: 10px;
+          text-decoration: none;
+          color: $text-primary;
+        }
+      }
+
+      .contact {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+        margin: 20px 0;
+        color: $text-color;
+      }
+
+      .text {
+        margin: 0 0 10px 0;
+        font-size: 20px;
+        line-height: 1.4;
+
+        i {
+          color: $text-hover;
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  flex-direction: column;
+}
+
+.my-info {
+  .education-container {
+    display: flex;
+
+    .education {
+      &-wrapper {
+        flex-grow: 1;
+
+        h3 {
+          a {
+            text-decoration: none;
+            color: $text-color;
+            font-size: 32px;
+            text-transform: uppercase;
+            &:hover {
+              color: $text-hover;
+            }
+          }
+        }
+      }
+
+      &-time {
+        display: inline-flex;
+        font-size: 16px;
+        color: $text-color;
+        align-items: flex-start;
+        justify-content: flex-end;
+        line-height: 2.5;
+        min-width: 200px;
+      }
+    }
+
+    @include maxWidth(700px) {
+      flex-direction: column;
+    }
+  }
+
+  .list-inline {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-size: 70px;
+    margin: 0;
+    padding: 0;
+
+    .list-item {
+      margin: 0 20px;
+
+      &:nth-child(1) {
+        color: #ef6530;
+      }
+      &:nth-child(2) {
+        color: #3d8fc6;
+      }
+      &:nth-child(3) {
+        color: #f0db4f;
+      }
+      &:nth-child(4) {
+        color: #61dafb;
+      }
+    }
+  }
+}
+
+.sub-title {
+  font-size: 24px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  letter-spacing: -1px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #f0db4f;
+}
+
+.show {
+  display: flex !important;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+}
+
+.full {
+  height: 435px !important;
+}
+
+.active {
+  color: #fff !important;
+}
+//cat-typing
+//https://codepen.io/carolineartz/pen/VwYwZaP
+
+#bongo-cat {
+  height: 50vh;
+  width: 50vw;
+}
+
+.typing-animation {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: $code-typing-animation-duration;
+}
+
+@for $line from 1 through 9 {
+  $fn-group: ceil(calc($line / 3));
+  path#f#{$fn-group}-l#{$line} {
+    animation-name: typing-f#{$fn-group}-l#{$line};
+  }
+}
+
+@keyframes typing-f3-l9 {
+  0% {
+    d: path("M8,25L8,25");
+  }
+  82% {
+    d: path("M8,25L8,25");
+  }
+  92% {
+    d: path("M8,25L96,25");
+  }
+  100% {
+    d: path("M8,25L96,25");
+  }
+}
+
+@keyframes typing-f3-l8 {
+  0% {
+    d: path("M8,13L8,13");
+  }
+  68% {
+    d: path("M8,13L8,13");
+  }
+  82% {
+    d: path("M8,13L146,13");
+  }
+  100% {
+    d: path("M8,13L146,13");
+  }
+}
+
+@keyframes typing-f3-l7 {
+  0% {
+    d: path("M0,1L0,1");
+  }
+  60% {
+    d: path("M0,1L0,1");
+  }
+  68% {
+    d: path("M0,1L96,1");
+  }
+  100% {
+    d: path("M0,1L96,1");
+  }
+}
+
+@keyframes typing-f2-l6 {
+  0% {
+    d: path("M8,25L8,25");
+  }
+  54% {
+    d: path("M8,25L8,25");
+  }
+  60% {
+    d: path("M8,25L69,25");
+  }
+  100% {
+    d: path("M8,25L69,25");
+  }
+}
+
+@keyframes typing-f2-l5 {
+  0% {
+    d: path("M8,13L8,13");
+  }
+  44% {
+    d: path("M8,13L8,13");
+  }
+  54% {
+    d: path("M8,13L114,13");
+  }
+  100% {
+    d: path("M8,13L114,13");
+  }
+}
+
+@keyframes typing-f2-l4 {
+  0% {
+    d: path("M0,1L0,1");
+  }
+  30% {
+    d: path("M0,1L0,1");
+  }
+  44% {
+    d: path("M0,1L136,1");
+  }
+  100% {
+    d: path("M0,1L136,1");
+  }
+}
+
+@keyframes typing-f1-l3 {
+  0% {
+    d: path("M8,25L8,25");
+  }
+  24% {
+    d: path("M8,25L8,25");
+  }
+  30% {
+    d: path("M8,25L61,25");
+  }
+  100% {
+    d: path("M8,25L61,25");
+  }
+}
+
+@keyframes typing-f1-l2 {
+  0% {
+    d: path("M8,13L8,13");
+  }
+  14% {
+    d: path("M8,13L8,13");
+  }
+  24% {
+    d: path("M8,13L124,13");
+  }
+  100% {
+    d: path("M8,13L124,13");
+  }
+}
+
+@keyframes typing-f1-l1 {
+  0% {
+    d: path("M0,1L0,1");
+  }
+  14% {
+    d: path("M0,1L160,1");
+  }
+  100% {
+    d: path("M0,1L160,1");
+  }
+}
+
+#paw-right--up,
+#paw-right--down,
+#paw-left--up,
+#paw-left--down {
+  animation: blink $base-typing-speed infinite;
+}
+
+#paw-right--up,
+#paw-left--down {
+  animation-delay: calc($base-typing-speed / 2);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+#laptop__code {
+  transform: rotateX(-37deg) rotateY(-46deg) rotateZ(-23deg) translateX(8px)
+    translateY(20px) translateZ(-50px);
+}

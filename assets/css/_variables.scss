@@ -1,0 +1,15 @@
+$bg-primary: linear-gradient(135deg, #6f57cd 25%, cyan);
+$text-primary: #343a40;
+$text-color: #38ada9;
+$text-hover: #fa983a;
+$text-collapsed: rgba(255, 255, 255, 0.6);
+$text-collapsed-hover: rgba(255, 255, 255, 0.8);
+
+$base-typing-speed: 300ms;
+$code-typing-animation-duration: 1200ms;
+
+@mixin maxWidth($with) {
+  @media screen and (max-width: $with) {
+    @content;
+  }
+}
