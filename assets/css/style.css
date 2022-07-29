@@ -357,6 +357,15 @@ hr {
   color: #fff !important;
 }
 
+.download > a {
+  color: #38ada9;
+  text-decoration: none;
+}
+.download > a:hover {
+  color: #fa983a;
+  cursor: pointer;
+}
+
 #bongo-cat {
   height: 50vh;
   width: 50vw;
